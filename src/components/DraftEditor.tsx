@@ -11,6 +11,10 @@ export function DraftEditor() {
     setNewParagraph(""); 
   };
 
+  const saveDraft = () => {
+    alert("Rascunho salvo com sucesso!");
+  };
+
   return (
     <div>
       <h2>Editor de Redação</h2>
@@ -27,6 +31,8 @@ export function DraftEditor() {
           <Paragraph key={p.id} text={p.text} />
         ))}
       </div>
+
+      <button onClick={saveDraft}>Salvar Rascunho</button>
     </div>
   )
 }
