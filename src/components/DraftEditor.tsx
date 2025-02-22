@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Paragraph } from "./Paragraph";
 
 export function DraftEditor() {
   const [paragraphs, setParagraphs] = useState<{ id: number; text: string }[]>([]);
@@ -22,7 +23,9 @@ export function DraftEditor() {
 
       <div>
         <h3>Rascunho</h3>
-        <p>Parágrafo</p>
+        {paragraphs.map((p) => (
+          <Paragraph key={p.id} text={p.text} />
+        ))}
       </div>
     </div>
   )
