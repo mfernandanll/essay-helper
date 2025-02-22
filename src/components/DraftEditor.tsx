@@ -4,6 +4,7 @@ import { Paragraph } from "./Paragraph";
 export function DraftEditor() {
   const [paragraphs, setParagraphs] = useState<{ id: number; text: string }[]>([]);
   const [newParagraph, setNewParagraph] = useState("");
+  const [essay, setEssay] = useState<string[]>([]);
 
   const addParagraph = () => {
     if (newParagraph.trim() === "") return;
@@ -13,6 +14,7 @@ export function DraftEditor() {
 
   const saveDraft = () => {
     alert("Rascunho salvo com sucesso!");
+    setEssay(paragraphs.map((p) => p.text)); 
   };
 
   return (
@@ -23,7 +25,7 @@ export function DraftEditor() {
         onChange={(e) => setNewParagraph(e.target.value)}
         placeholder="Digite seu parágrafo aqui..."
       />
-      
+
       <button onClick={addParagraph}>Adicionar Parágrafo</button>
 
       <div>
@@ -38,9 +40,17 @@ export function DraftEditor() {
       <div>
         <h3>Texto Completo</h3>
         <div style={{ border: "1px solid #ccc", padding: "10px" }}>
-          {paragraphs.map((p) => (
-            <p key={p.id}>{p.text}</p>
-          ))}
+          {
+            essay.length == 0 ? (
+              <p>Ainda não há nenhum texto salvo.</p>
+            ) : (
+              <div>
+                {essay.map((text, index) => (
+                  <p key={index}>{text}</p>
+                ))}
+              </div>
+            )
+          }
         </div>
       </div>
 
