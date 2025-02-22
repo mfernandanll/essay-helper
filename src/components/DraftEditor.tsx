@@ -23,6 +23,7 @@ export function DraftEditor() {
         onChange={(e) => setNewParagraph(e.target.value)}
         placeholder="Digite seu parágrafo aqui..."
       />
+      
       <button onClick={addParagraph}>Adicionar Parágrafo</button>
 
       <div>
