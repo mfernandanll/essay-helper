@@ -33,6 +33,16 @@ export function DraftEditor() {
       </div>
 
       <button onClick={saveDraft}>Salvar Rascunho</button>
+
+      <div>
+        <h3>Texto Completo</h3>
+        <div style={{ border: "1px solid #ccc", padding: "10px" }}>
+          {paragraphs.map((p) => (
+            <p key={p.id}>{p.text}</p>
+          ))}
+        </div>
+      </div>
+
     </div>
   )
 }
