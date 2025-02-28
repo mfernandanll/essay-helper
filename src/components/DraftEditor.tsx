@@ -26,7 +26,9 @@ export function DraftEditor() {
         placeholder="Digite seu parágrafo aqui..."
       />
 
-      <button onClick={addParagraph}>Adicionar Parágrafo</button>
+      <div className="btnContainer">
+        <button onClick={addParagraph}>Adicionar Parágrafo</button>
+      </div>
 
       <div>
         <h3>Rascunho</h3>
@@ -35,7 +37,9 @@ export function DraftEditor() {
         ))}
       </div>
 
-      <button onClick={saveDraft}>Salvar Rascunho</button>
+      <div className="btnContainer">
+        <button onClick={saveDraft}>Salvar Rascunho</button>
+      </div>
 
       <div>
         <h3>Texto Completo</h3>
